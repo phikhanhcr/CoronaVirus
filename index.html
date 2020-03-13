@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+    .font {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style:initial;
+    }
+    .fontTitle {
+        font-size: 40px;
+        color: #2F2F2F;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    #cases {
+        color: #aaa;
+    }
+    #dead{ 
+        color: #555252;
+    }
+    #alive {
+        color: #4CAF50;
+    }
+</style>
+<body>
+    <button id="btn" onclick="getData()">Display</button>
+    <h2 class="fontTitle">CoronaVirus Cases</h2>
+    <p id="cases" class="font">12345</p>
+    
+    <h2 class="fontTitle">Deaths:</h2>
+    <p id="dead" class="font">7984</p>
+    <h2 class="fontTitle">Recovered:</h2>
+    <p id="alive" class="font"> 70455</p>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
