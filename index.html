@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,70 @@
     body {
         text-align: center;
     }
+
     .font {
         font-size: 50px;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-        font-style:initial;
+        font-style: initial;
     }
+
     .fontTitle {
         font-size: 40px;
         color: #2F2F2F;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
-    #cases {
+
+    #cases , #casesVn {
         color: #aaa;
     }
-    #dead{ 
+
+    #dead, #deadVn {
         color: #555252;
     }
-    #alive {
+
+    #alive, #aliveVn {
         color: #4CAF50;
     }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items:center;   
+    }
+    img {
+        height: 100px;
+        width: 100px;
+    }
 </style>
+
 <body>
     <button id="btn" onclick="getData()">Display</button>
-    <h2 class="fontTitle">CoronaVirus Cases</h2>
-    <p id="cases" class="font">12345</p>
+    <div class="container">
+        <div class="div1">
+            <img src="./images/world.jpg" alt="">
+            <h2 class="fontTitle">CoronaVirus Cases</h2>
+            <p id="cases" class="font">0000</p>
+            <h2 class="fontTitle">Deaths:</h2>
+            <p id="dead" class="font">0000</p>
+            <h2 class="fontTitle">Recovered:</h2>
+            <p id="alive" class="font"> 0000</p>
+        </div>
+        <div class="div2">
+            <img src="./images/hi.jfif" alt="">
+            <h2 class="fontTitle">CoronaVirus Cases</h2>
+            <p id="casesVn" class="font">0000</p>
+            <h2 class="fontTitle">Deaths:</h2>
+            <p id="deadVn" class="font">0000</p>
+            <h2 class="fontTitle">Recovered:</h2>
+            <p id="aliveVn" class="font"> 0000</p>
+        </div>
+    </div>
     
-    <h2 class="fontTitle">Deaths:</h2>
-    <p id="dead" class="font">7984</p>
-    <h2 class="fontTitle">Recovered:</h2>
-    <p id="alive" class="font"> 70455</p>
+
     <script src="./index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 </body>
+
 </html>

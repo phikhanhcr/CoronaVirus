@@ -1,48 +1,20 @@
-/*****************************************/
-import axios from axios; 
-//document.getElementById("cases").innerHTML = 2134;
-//var axios = require("axios");
-document.getElementById("btn").addEventListener("click" , getData);
-
+document.getElementById("btn").addEventListener("click" , getData());
 function getData() {
-    axios.get("https://code.junookyo.xyz/api/ncov-moh/data.json?fbclid=IwAR0WjUxY3Ih_5y-F2fcXO0YdlYy2VU9jWwt0LnB7QVezbDVv8RyIGWEXgEw")
-        .then(res => {
-            console.log(res.data.data.global.cases);
-            document.getElementById("cases").textContent = res.data.data.global.cases;
+  var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+  targetUrl = 'https://code.junookyo.xyz/api/ncov-moh/data.json';
 
-            // document is not defined 
-        })
-        .catch(err => {
-            console.log(err);
-        })
+  fetch(proxyUrl + targetUrl).
+  then(blob => blob.json()).
+  then(data => {
+    console.log(data);
+    document.getElementById("cases").innerHTML = data.data.global.cases;
+    document.getElementById("dead").innerHTML = data.data.global.deaths;
+    document.getElementById("alive").innerHTML = data.data.global.recovered;
+    document.getElementById("casesVn").innerHTML = data.data.vietnam.cases;
+    document.getElementById("deadVn").innerHTML = data.data.vietnam.deaths;
+    document.getElementById("aliveVn").innerHTML = data.data.vietnam.recovered;
+  }).
+  catch(e => {
+    console.log(e);
+  });
 }
-
-//var url = "https://code.junookyo.xyz/api/ncov-moh/data.json?fbclid=IwAR0WjUxY3Ih_5y-F2fcXO0YdlYy2VU9jWwt0LnB7QVezbDVv8RyIGWEXgEw";
-/*****************************************/
-// function getData() {
-//     const testURL = 'https://code.junookyo.xyz/api/ncov-moh/data.json';
-//     const myInit = {
-//         method: 'GET',
-//         mode: 'no-cors',
-//     };
-
-//     const myRequest = new Request(testURL , myInit);
-
-//     fetch(myRequest , myInit).then(response => response.json())
-//         .then(function (response) {
-//             console.log(response);
-//         }).catch(function(e) {
-//             console.log(e);
-//         });
-
-// }
-// function getData() {
-//     fetch("https://code.junookyo.xyz/api/ncov-moh/data.json?fbclid=IwAR0WjUxY3Ih_5y-F2fcXO0YdlYy2VU9jWwt0LnB7QVezbDVv8RyIGWEXgEw")
-//         .then( res => res.json())
-//         .then(res => {
-//             console.log(res);
-//         }).catch(err => {
-//             console.log(err);
-//         })
-// }
-// getData();
